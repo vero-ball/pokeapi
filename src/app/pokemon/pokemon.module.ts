@@ -6,6 +6,7 @@ import { PokemonComponent } from './pokemon/pokemon.component';
   imports: [
     CommonModule
   ],
-  declarations: [PokemonComponent]
+  declarations: [PokemonComponent],
+  exports: [PokemonComponent]
 })
 export class PokemonModule { }
