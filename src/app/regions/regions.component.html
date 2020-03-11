@@ -1,0 +1,20 @@
+<h1>Choose a region</h1>
+<table class="table" *ngIf="regions$" | async as regions; else empty>
+  <thead class="thead-dark">
+    <tr>
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>John</td>
+      <td>Doe</td>
+      <td>john@example.com</td>
+    </tr>
+  </tbody>
+</table>
+<ng-template #empty>
+  Loading...
+</ng-template>
