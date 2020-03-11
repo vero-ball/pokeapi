@@ -1,16 +1,18 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PokemonService {
-  private url = 'https://pokeapi.co/';
+  private base = 'https://pokeapi.co/';
   private pokeListEndpoint = 'api/v2/pokemon/';
 
-  constructor(private httoClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) { }
 
-  getAllPokemon{
-
+  getAllPokemon$() {
+    const url = this.base + this.pokeListEndpoint;
+    return this.httpClient.get<any>(url).pipe(map(result => result [1]));
   }
 }
